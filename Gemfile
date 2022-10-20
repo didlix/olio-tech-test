@@ -71,5 +71,9 @@ group :test do
   gem "webdrivers"
   gem "rspec", "~> 3.11"
   gem "rspec-rails", "~> 6.0"
+  gem "rubocop", "~> 1.37"
+  gem "rubocop-rails", "~> 2.16"
+  gem "rubocop-rspec", "~> 2.13"
 end
+
 
