@@ -1,0 +1,15 @@
+.articles div {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.article {
+  width: 23rem;
+  border:  1px solid grey;
+  margin: 2rem;
+}
+
+.article h2 {
+  margin: 1rem;
+}
