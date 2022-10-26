@@ -3,22 +3,23 @@
 require 'rails_helper'
 
 RSpec.describe 'Articles', type: :feature do
+  let(:existing_articles) do
+    [
+      instance_double('Article', title: 'hello world', id: 42),
+      instance_double('Article', title: 'hello sky', id: 1337)
+    ]
+  end
+
+  before do
+    allow(ArticlesService).to receive(:all).and_return(existing_articles)
+  end
+
   describe 'Viewing Articles' do
     subject(:visit_articles_page) do
       visit(articles_path)
     end
 
-    let(:existing_articles) do
-      [
-        instance_double('Article', title: 'hello world'),
-        instance_double('Article', title: 'hello sky')
-      ]
-    end
-
-    before do
-      allow(ArticlesService).to receive(:all).and_return(existing_articles)
-      visit_articles_page
-    end
+    before { visit_articles_page }
 
     it 'displays all articles on the articles page' do
       expect(page).to have_content('hello world')
