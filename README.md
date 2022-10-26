@@ -11,6 +11,8 @@ Welcome to this demo ruby on rails application. It has been designed to demonstr
 
 ## Installation
 
+You can download this code here [https://github.com/didlix/olio-tech-test/archive/refs/heads/main.zip](https://github.com/didlix/olio-tech-test/archive/refs/heads/main.zip). Be sure to unzip it before continuing with these instructions.
+
 In order to get this application running using these instructions you will need to be running MacOS and then do perform some additional steps:
 
 1. Be running Ruby 2.7.6
@@ -47,7 +49,7 @@ Once you've followed all of these commands it will be a good idea to quit (`CMD+
 Browse to the directory that this readme file is in in your terminal. You can do this with the `cd` command. For example:
 
 ```bash
-cd Downloads/olio-rails-example
+cd Downloads/main
 ```
 
 Then run these commands:
