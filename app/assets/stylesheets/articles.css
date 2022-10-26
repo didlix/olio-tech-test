@@ -8,8 +8,24 @@
   width: 23rem;
   border:  1px solid grey;
   margin: 2rem;
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  box-shadow: 0.2rem 0.2rem lightgrey;
+  border-radius:  0.5rem;
+}
+
+.article button {
+  width:  20rem;
 }
 
 .article h2 {
+  display:  inline-block;
+  overflow:  hidden;
   margin: 1rem;
+  text-overflow: ellipsis;
+  height: 2rem;
+  width: 20rem;
+  white-space: nowrap;
 }
