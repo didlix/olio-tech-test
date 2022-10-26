@@ -20,4 +20,13 @@ describe Article do
       expect(article.id).to eq(assigned_attributes[:id])
     end
   end
+
+  describe '#likes' do
+    it 'gets the number of associated ArticleLike records' do
+      ArticleLike.create(article_id: 42)
+
+      expect(article.likes).to eq(1)
+    end
+  end
 end
+
