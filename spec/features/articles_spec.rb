@@ -33,4 +33,19 @@ RSpec.describe 'Articles', type: :feature do
       end
     end
   end
+
+  describe 'Liking Articles' do
+    subject(:like_article) do
+      visit(articles_path)
+      within("#article-#{article_id}") { click_on('👍🏻') }
+    end
+
+    let(:article_id) { 42 }
+
+    it 'allows the user to like a post' do
+      expect { like_article }.to(
+        change { ArticleLike.where(article_id: article_id).count }.by(1)
+      )
+    end
+  end
 end
