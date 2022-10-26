@@ -10,7 +10,7 @@ describe Article do
       { title: 'Three little birds' }
     end
 
-    it 'assigns the title from a hash' do
+    it 'assigns the title from a hash of attributes' do
       expect(article.title).to eq(assigned_attributes[:title])
     end
   end
