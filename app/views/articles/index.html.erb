@@ -6,8 +6,16 @@
   <% else %>
     <div>
       <% @articles.each do |article| %>
-        <div class="article">
+        <div class="article" id="<%= "article-#{article.id}" %>">
           <h2><%= article.title %></h2>
+          <%=
+            button_to(
+              '👍🏻',
+              article_likes_path,
+              params: { article_id: article.id },
+              method: :post
+            )
+          %>
         </div>
       <% end %>
     </div>
