@@ -5,8 +5,8 @@ require 'rails_helper'
 RSpec.describe 'Articles', type: :feature do
   let(:existing_articles) do
     [
-      instance_double('Article', title: 'hello world', id: 42),
-      instance_double('Article', title: 'hello sky', id: 1337)
+      Article.new({ title: 'hello world', id: 42 }),
+      Article.new({ title: 'hello sky', id: 1337 })
     ]
   end
 
@@ -45,6 +45,22 @@ RSpec.describe 'Articles', type: :feature do
     it 'allows the user to like a post' do
       expect { like_article }.to(
         change { ArticleLike.where(article_id: article_id).count }.by(1)
+      )
+    end
+
+    it 'displays the number of likes on the page' do
+      like_article
+
+      likes_count = page.find("#article-#{article_id} .likes").text.to_i
+
+      expect(likes_count).to eq(1)
+    end
+
+    it 'updates the number of likes when the user uses the 👍🏻 button' do
+      visit(articles_path)
+
+      expect { like_article }.to(
+        change { page.find("#article-#{article_id} .likes").text.to_i }.by(1)
       )
     end
   end
