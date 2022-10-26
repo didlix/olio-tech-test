@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :articles, only: %i[index]
   resources :article_likes, only: %i[create]
+  root to: 'articles#index'
 end
